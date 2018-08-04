@@ -27,7 +27,7 @@ Copyright 2018 @thestd.
 - [Португальська](http://webfatorial.github.io/wtf-html-css/) - Перекладено [webfatorial](http://webfatorial.com/)
 - [Іспанська](http://uncasually.github.io/wtf-html-y-css/) - Перекладено [uncasually](https://github.com/uncasually)
 - [Російська](http://elforastero.github.io/wtf-html-css/) - Перекладено [ElForastero](https://github.com/elforastero)
-- [Українська](http://thestd.github.io/wtf-html-css/) - Перекладено [std::](https://github.com/thestd)
+- [Українська](https://wtf-html-css.std.community/) - Перекладено [std::](https://github.com/thestd)
 - [Китайська Спрощена](https://lizheming.github.io/wtf-html-css/) - Перекладено [lizheming](https://github.com/lizheming)
 
 Маєте переклад, з яким бажаєте пов'язати? Відкрийте pull request, щоб додати його сюди. Не забудьте зберегти його в алфавітному порядку.
