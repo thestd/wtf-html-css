@@ -10,7 +10,7 @@ layout: default
 - [Спочатку float-и](#floats-first)
 - [Float-и та очищення](#floats-clearing)
 - [Float-и і обчислювана висота](#floats-computed-height)
-- [Floated are block level](#floats-block-level)
+- [Плаваючі елементи зразу є блоками](#floats-block-level)
 - [Vertical margins often collapse](#vertical-margins-collapse)
 - [Styling table rows](#styling-table-rows)
 - [Firefox and `<input>` buttons](#buttons-firefox)
@@ -120,17 +120,17 @@ html {
 
 
 <a name="floats-block-level"></a>
-### Floated elements are block level
-Elements with a `float` will automatically become `display: block;`. Do not set both as there is no need and the `float` will override your `display`.
+### Плаваючі елементи зразу є блоками
+Елементи з `float` автоматично стануть `display: block;`. Не встановлюйте обидва, оскільки в цьому немає жодної необхідності, і `float` все одно перевизначить ваш `display`.
 
 ```css
 .element {
   float: left;
-  display: block; /* Not necessary */
+  display: block; /* Не має необхідності */
 }
 ```
 
-**Fun fact:** *Years ago, we had to set `display: inline;` for most floats to work properly in IE6 to avoid the [double margin bug](http://www.positioniseverything.net/explorer/doubled-margin.html). However, those days have long passed.*
+**Цікавий факт:** *Роки тому, ми мали встановлювати `display: inline;` для більшості float-ів для правильної роботи в IE6 аби уникнути [баг подвоєного відступу](http://www.positioniseverything.net/explorer/doubled-margin.html). Проте, ці часи давно минули.*
 
 
 <a name="vertical-margins-collapse"></a>
