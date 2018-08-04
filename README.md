@@ -18,7 +18,7 @@ Copyright 2018 @thestd.
 
 ### Translations
 
-Переклади підтримуються їх творцями і не завжди можуть бути оновлені з цим оригіналом.
+Переклади підтримуються їх творцями і не завжди можуть бути оновлені до оригіналу.
 
 - [Французька](http://mathieuhays.github.io/wtf-html-css/) - Перекладено [mathieuhays](https://github.com/mathieuhays)
 - [Італійська](http://uncasually.github.io/wtf-html-css/) - Перекладено [uncasually](https://github.com/uncasually)
