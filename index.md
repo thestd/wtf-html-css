@@ -163,21 +163,21 @@ You can see this fix in action in the same [JS Bin example](http://jsbin.com/yab
 
 
 <a name="buttons-type"></a>
-### Always set a `type` on `<button>`s
-The default value is `submit`, meaning any button in a form can submit the form. Use `type="button"` for anything that doesn't submit the form and `type="submit"` for those that do.
+### Завжди задавайте атрибут `type` для тегу `<button>`s
+Значення за замовчуванням `submit`, означає, що будь-яка в формі може відправити форму. Задавайте `type="button"` для всіх тегів `<button>`, що не відправляють форму і `type="submit"` для тих, які відправляють.
 
 ```html
 <button type="submit">Save changes</button>
 <button type="button">Cancel</button>
 ```
 
-For actions that require a `<button>` and are not in a form, use the `type="button"`.
+Для дій, які вимагають використання тегу `<button>` і є не всередині форми використовуйте `type="button"`.
 
 ```html
 <button class="dismiss" type="button">x</button>
 ```
 
-**Fun fact:** *Apparently IE7 doesn't properly support the `value` attribute on `<button>`s. Instead of reading the attribute's content, it pulls from the innerHTML (the content between the opening and closing `<button>` tags). However, I don't see this as a huge concern for two reasons: IE7 usage is way down, and it seems rather uncommon to set both a `value` and the innerHTML on `<button>`s.*
+**Цікавий факт:** *Очевидно, що браузер IE7 не належним чином підтримує атрибут `value` для тегу `<button>`s. Замість того, щоб читати вміст атрибуту, він витягує з innerHTML (вміст між відкриваючим і закриваючим тегом `<button>`). Однак, я не розглядаю це, як величезне занепокоєння з двох причин: використання IE7 зменшується, і здається досить незвичним встановити атрибут `value` і innerHTML для тегу `<button>`s.*
 
 
 <a name="ie-selector-limit"></a>
