@@ -16,9 +16,9 @@ layout: default
 - [Firefox inner outline on buttons](#buttons-firefox-outline)
 - [Always set a `type` on `<button>`s](#buttons-type)
 - [Internet Explorer's selector limit](#ie-selector-limit)
-- [Position explained](#position-explained)
-- [Position and width](#position-width)
-- [Fixed position and transforms](#position-transforms)
+- [Пояснення позиціонуванню](#position-explained)
+- [Позиція і ширина](#position-width)
+- [Фіксована позиція та перетворення](#position-transforms)
 
 
 <a name="doctype"></a>
@@ -202,17 +202,17 @@ input[type="text"],
 
 
 <a name="position-explained"></a>
-### Position explained
-Elements with `position: fixed;` are placed relative to the browser viewport. Elements with `position: absolute;` are placed relative to their closest parent with a position other than `static` (e.g., `relative`, `absolute`, or `fixed`).
+### Пояснення позиціонуванню
+Елементи з `position: fixed;` розташовані відносно вікна браузера. Елементи з `position: absolute;` розташовані відносно найближчого батьківського елементу з позиціонуванням, іншим за `static` (напр., `relative`, `absolute`, чи `fixed`).
 
 
 <a name="position-width"></a>
-### Position and width
-Don't set `width: 100%;` on an element that has `position: [absolute|fixed];`, `left`, and `right`. The use of `width: 100%;` is the same as the combined use of `left: 0;` and `right: 0;`. Use one or the other, but not both.
+### Позиція і ширина
+Не встановлюйте `width: 100%;` на елементі, що має `position: [absolute|fixed];`, `left`, та `right`. Використання `width: 100%;` це те саме, що й комбіноване використання `left: 0;` та `right: 0;`. Використовуйте щось одне.
 
 
 <a name="position-transforms"></a>
-### Fixed position and transforms
-Browsers break `position: fixed;` when an element's parent has a `transform` set. Using transforms creates a new containing block, effectively forcing the parent to have `position: relative;` and the fixed element to behave as `position: absolute;`.
+### Фіксована позиція та перетворення
+Браузери ламають `position: fixed;` коли батьківський елемент має встановлену властивість `transform`. Використання перетворень створює новий блок, який фактично змушує батьківський елемент мати `position: relative;` і фіксований елемент вести себе як `position: absolute;`.
 
-[See the demo](http://jsbin.com/yabek/1/) and read [Eric Meyer's post on the matter](http://meyerweb.com/eric/thoughts/2011/09/12/un-fixing-fixed-elements-with-css-transforms/).
+[Дивіться демо](http://jsbin.com/yabek/1/) і читайте [публікацію Еріка Мейера з цього приводу](http://meyerweb.com/eric/thoughts/2011/09/12/un-fixing-fixed-elements-with-css-transforms/).
