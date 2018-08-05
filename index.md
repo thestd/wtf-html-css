@@ -11,8 +11,8 @@ layout: default
 - [Float-и та очищення](#floats-clearing)
 - [Float-и і обчислювана висота](#floats-computed-height)
 - [Плаваючі елементи зразу є блоками](#floats-block-level)
-- [Vertical margins often collapse](#vertical-margins-collapse)
-- [Styling table rows](#styling-table-rows)
+- [Колапс вертикально суміжних margin-ів](#vertical-margins-collapse)
+- [Стилізація рядків таблиці](#styling-table-rows)
 - [Firefox and `<input>` buttons](#buttons-firefox)
 - [Firefox inner outline on buttons](#buttons-firefox-outline)
 - [Always set a `type` on `<button>`s](#buttons-type)
@@ -134,15 +134,15 @@ html {
 
 
 <a name="vertical-margins-collapse"></a>
-### Vertically adjacent margins collapse
-Top and bottom margins on adjacent elements (one after the other) can and will collapse in many situations, but never for floated or absolutely positioned elements. [Read this MDN article](https://developer.mozilla.org/en-US/docs/Web/CSS/margin_collapsing) or the CSS2 spec's [collapsing margin section](http://www.w3.org/TR/CSS2/box.html#collapsing-margins) to find out more.
+### Колапс вертикально суміжних margin-ів
+Верхні і нижні відступи (margins) на сусідніх елементах (один за іншим) можуть і будуть руйнуватися в багатьох ситуаціях, але ніколи для плаваючих або абсолютно розташованих елементів. [Прочитайте цю MDN статтю](https://developer.mozilla.org/uk/docs/Web/CSS/margin_collapsing) або документацію CSS2 [collapsing margin section](http://www.w3.org/TR/CSS2/box.html#collapsing-margins) щоб дізнатись більше.
 
-Horizontally adjacent margins will **never collapse**.
+Горизонтально суміжні margin-и **ніколи не руйнуються**.
 
 
 <a name="styling-table-rows"></a>
-### Styling table rows
-Table rows, `<tr>`s, do not receive `border`s unless you set `border-collapse: collapse;` on the parent `<table>`. Moreover, if the `<tr>` and children `<td>`s or `<th>`s have the *same* `border-width`, the rows will not see their border applied. [See this JS Bin link for an example.](http://jsbin.com/yabek/2/)
+### Стилізація рядків таблиці
+Рядки таблиці, `<tr>`-и, не зважають на `border`-и допоки ви не встановите `border-collapse: collapse;` для батьківського елементу `<table>`. До того ж, якщо `<tr>` і дочірні `<td>`-и чи `<th>`-и мають *однаковий* `border-width`, рядки не бачитимуть власні `border` правила. [Перегляньте це JS Bin посилання, як приклад.](http://jsbin.com/yabek/2/)
 
 
 <a name="buttons-firefox"></a>
