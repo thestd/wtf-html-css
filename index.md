@@ -11,7 +11,7 @@ layout: default
 - [Float-и та очищення](#floats-clearing)
 - [Float-и і обчислювана висота](#floats-computed-height)
 - [Плаваючі елементи зразу є блоками](#floats-block-level)
-- [Vertical margins often collapse](#vertical-margins-collapse)
+- [Колапс вертикально суміжних margin-ів](#vertical-margins-collapse)
 - [Styling table rows](#styling-table-rows)
 - [Firefox and `<input>` buttons](#buttons-firefox)
 - [Firefox inner outline on buttons](#buttons-firefox-outline)
@@ -134,10 +134,10 @@ html {
 
 
 <a name="vertical-margins-collapse"></a>
-### Vertically adjacent margins collapse
-Top and bottom margins on adjacent elements (one after the other) can and will collapse in many situations, but never for floated or absolutely positioned elements. [Read this MDN article](https://developer.mozilla.org/en-US/docs/Web/CSS/margin_collapsing) or the CSS2 spec's [collapsing margin section](http://www.w3.org/TR/CSS2/box.html#collapsing-margins) to find out more.
+### Колапс вертикально суміжних margin-ів
+Верхні і нижні відступи (margins) на сусідніх елементах (один за іншим) можуть і будуть руйнуватися в багатьох ситуаціях, але ніколи для плаваючих або абсолютно розташованих елементів. [Прочитайте цю MDN статтю](https://developer.mozilla.org/uk/docs/Web/CSS/margin_collapsing) або документацію CSS2 [collapsing margin section](http://www.w3.org/TR/CSS2/box.html#collapsing-margins) щоб дізнатись більше.
 
-Horizontally adjacent margins will **never collapse**.
+Горизонтально суміжні margin-и **ніколи не руйнуються**.
 
 
 <a name="styling-table-rows"></a>
