@@ -13,9 +13,9 @@ layout: default
 - [Плаваючі елементи зразу є блоками](#floats-block-level)
 - [Колапс вертикально суміжних margin-ів](#vertical-margins-collapse)
 - [Стилізація рядків таблиці](#styling-table-rows)
-- [Firefox inner outline on buttons](#buttons-firefox-outline)
-- [Always set a `type` on `<button>`s](#buttons-type)
-- [Internet Explorer's selector limit](#ie-selector-limit)
+- [Внутрішній контур Firefox для кнопок](#buttons-firefox-outline)
+- [Завжди задавайте атрибут `type` для тегу `<button>`](#buttons-type)
+- [Обмеження кількості стилів в Internet Explorer](#ie-selector-limit)
 - [Пояснення позиціонуванню](#position-explained)
 - [Позиція і ширина](#position-width)
 - [Фіксована позиція та перетворення](#position-transforms)
@@ -145,9 +145,9 @@ html {
 
 
 <a name="buttons-firefox-outline"></a>
-### Firefox inner outline on buttons
+### Внутрішній контур Firefox для кнопок
 
-Firefox [adds an inner outline](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#Notes) to buttons (`<input>`s and `<button>`s) on `:focus`. Apparently it's for accessibility, but its placement seems rather odd. Use this CSS to override it:
+Браузер Firefox [додає внутрішній контур](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#Notes) для кнопок (`<input>`-и та `<button>`-и) при наведені (псевдоклас CSS `:focus`). Очевидно, що це для доступності, але його розташування виглядає досить дивно. Використовуйте CSS поданий нижче, щоб перевизначити стиль:
 
 ```css
 input::-moz-focus-inner,
@@ -157,44 +157,45 @@ button::-moz-focus-inner {
 }
 ```
 
-You can see this fix in action in the same [JS Bin example](http://jsbin.com/yabek/4/) mentioned in the previous section.
+[Перегляньте це JS Bin посилання, як приклад вирішення проблеми](http://jsbin.com/yabek/4/) згаданої в попередній секції.
 
-**Pro-Tip!** *Be sure to include some focus state on buttons, links, and inputs. Providing an affordance for accessibility is paramount, both for pro users who tab through content and those with vision impairments.*
+**Професійна порада!** *Не забувайте додавати особливий стиль фокусу для кнопок, посилань та полів введення (inputs). 
+Забезпечення доступності є першочерговим завданням, як для професійних користувачів так і для людей, що мають порушення зору.*
 
 
 <a name="buttons-type"></a>
-### Always set a `type` on `<button>`s
-The default value is `submit`, meaning any button in a form can submit the form. Use `type="button"` for anything that doesn't submit the form and `type="submit"` for those that do.
+### Завжди задавайте атрибут `type` для тегу `<button>`
+Типове значення `submit`, означає, що будь-яка кнопка в формі може відправити форму. Задавайте `type="button"` для всіх тегів `<button>`, що НЕ відправляють форму і `type="submit"` для тих, що відправляють.
 
 ```html
-<button type="submit">Save changes</button>
-<button type="button">Cancel</button>
+<button type="submit">Зберегти зміни</button>
+<button type="button">Скасувати</button>
 ```
 
-For actions that require a `<button>` and are not in a form, use the `type="button"`.
+Для дій, які вимагають використання тегу `<button>` і є не всередині форми використовуйте `type="button"`.
 
 ```html
 <button class="dismiss" type="button">x</button>
 ```
 
-**Fun fact:** *Apparently IE7 doesn't properly support the `value` attribute on `<button>`s. Instead of reading the attribute's content, it pulls from the innerHTML (the content between the opening and closing `<button>` tags). However, I don't see this as a huge concern for two reasons: IE7 usage is way down, and it seems rather uncommon to set both a `value` and the innerHTML on `<button>`s.*
+**Цікавий факт:** *Очевидно, що браузер IE7 не підтримує належним чином атрибут `value` для тегу `<button>`. Замість того, щоб читати вміст атрибуту, він витягує innerHTML (вміст між відкриваючим і закриваючим тегом `<button>`). Однак, це не вартує уваги з двох причин: використання IE7 зменшується, і досить незвично встановлювати атрибут `value` і innerHTML для тегу `<button>`.*
 
 
 <a name="ie-selector-limit"></a>
-### Internet Explorer's selector limit
-Internet Explorer 9 and below have a max of 4,096 selectors per stylesheet. There is also a limit of 31 combined stylesheets and `<style></style>` includes per page. Anything after this limit is ignored by the browser. Either split your CSS up, or start refactoring. I'd suggest the latter.
+### Обмеження кількості стилів в Internet Explorer
+Браузери Internet Explorer версії 9 та нижче мають максимальний ліміт в 4096 селекторів на кожну таблицю стилів. Існує також ліміт в 31 комбіновану таблицю стилів і використань `<style></style>` на сторінку. Все, що використовується після цього ліміту - ігнорується браузером. Потрібно або розділити ваш CSS або покращити код(провести рефакторинг). Я пропоную останній варіант.
 
-As a helpful side note, here's how browsers count selectors:
+Як корисна примітка, ось як браузери підраховують селектори:
 
 ```css
-/* One selector */
+/* Один селектор */
 .element { }
 
-/* Two more selectors */
+/* Ще два селектори */
 .element,
 .other-element { }
 
-/* Three more selectors */
+/* Ще три селектори */
 input[type="text"],
 .form-control,
 .form-group > input { }
